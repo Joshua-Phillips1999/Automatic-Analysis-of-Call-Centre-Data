@@ -14,3 +14,13 @@ RAVDESS: https://zenodo.org/record/1188976#.YbNlpr1BzIU
 
 CREMA-D: https://www.tensorflow.org/datasets/catalog/crema_d
 
+## Steps to Use
+
+1. Install all the libraries and run the files from Sentiment folder in order to create your Sentiment Model (GPU is required for computation).
+2. Install all the libraries and run the files in Emotional folder in order to create your Emotional Model.
+3. Go to Product folder and connect to the database and run trial.py
+4. On home page upload your audio file and wait a while, once the different models have finished running the Dashboard page will open showing the results.
+5. You can view a summarized view of your past audio files as well on the VoiceLogger page
+6. Voila! You're done :)
+
+
