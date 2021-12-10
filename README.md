@@ -4,13 +4,9 @@ Call centers have been the first point of contact between an organization and it
 
 ## Links to Datasets used 
 
-### Indic TTS: https://www.iitm.ac.in/donlab/tts/database.php
-
-### Call Center Sample files from Magellan Solutions: https://www.magellan-solutions.com/resources/sample-recordings/
-
-### Restaurant Reviews from YELP: https://www.kaggle.com/omkarsabnis/yelp-reviews-dataset
-
-### RAVDESS: https://zenodo.org/record/1188976#.YbNlpr1BzIU
-
-### CREMA-D: https://www.tensorflow.org/datasets/catalog/crema_d
+Indic TTS: https://www.iitm.ac.in/donlab/tts/database.php
+Call Center Sample files from Magellan Solutions: https://www.magellan-solutions.com/resources/sample-recordings/
+Restaurant Reviews from YELP: https://www.kaggle.com/omkarsabnis/yelp-reviews-dataset
+RAVDESS: https://zenodo.org/record/1188976#.YbNlpr1BzIU
+CREMA-D: https://www.tensorflow.org/datasets/catalog/crema_d
 
