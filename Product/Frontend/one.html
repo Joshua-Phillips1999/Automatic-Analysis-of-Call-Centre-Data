@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Team 44 Capstone</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/one.css') }}">
+	<link rel="icon" type="image/x-icon" href="44.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+function getFilePath(){
+ 
+         //var filePath=$('#fileUpload').val(); 
+		 var x = document.getElementById("audiofile").value;
+		 console.log(x);	 
+		 
+     
+}
+
+</script>
+</head>
+<body>
+	
+	<div class="header-logo">Team 44</div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+
+            <div class="header-content clearfix">
+                <div class="header-list">
+                <ul>
+                    <li class="heading"><a href="{{url_for('home')}}">Main</a></li>
+                    <!--<li class="heading"><a href="{{url_for('dashb')}}">Dashboard</a></li> -->
+                    <li class="heading"><a href="{{url_for('voicelog')}}">Voice Log</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+	<div class="main">
+
+
+		<h1 class="heading_1">Welcome to Team 44's Capstone Project on</h1>
+		<h2 style="color: red;" class="heading_1" >Automatic Analysis of Call Center Conversations</h2>
+
+		<br>
+		
+
+		<div class="accepting" >
+		<br>
+
+		<p class="main_1" >Please enter the audio file below:</p>
+		<form action="/dashboard" method='post' enctype="multipart/form-data"> <!-- Have a proper place to store the audio file-->
+    		<label class="main_2">Select audio:</label>
+  			<input type="file" name="audiofile" accept="audio/*" id="fileUpload" /><p></p>
+ 			<input type="submit" class="submit_button">
+		</form>
+
+		<br>
+		</div>
+		
+	</div>
+	
+	<!-- <div class="footer">
+		
+	</div> -->	
+
+</body>
+</html>

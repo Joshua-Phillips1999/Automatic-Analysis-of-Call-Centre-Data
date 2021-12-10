@@ -1,0 +1,83 @@
+.header{
+
+width: 1440px;
+height: 75px;
+left: 0px;
+top: 0px;
+
+}
+
+
+.header-logo{
+  float: left;
+  font-size: 36px;
+  padding:20px 40px;
+  background: linear-gradient(180deg, rgba(93, 3, 90, 0.81) 0%, #5D035A 57.81%);
+  font-family: Arial;
+font-style: italic;
+font-weight: bold;
+color:  #FFFFFF;
+}
+
+li.heading{
+  list-style: none;
+  float: left;
+  /* Change the top & bottom padding to 33px, and left & right padding to 20px */
+  padding: 33px 0px 33px 20px;
+  font-family: Arial;
+  
+}
+
+.heading_1{
+	text-align: center;
+  font-family: arial;
+}
+
+.main{
+  text-align: center;
+  font-family: arial;
+}
+
+.main_1{
+  font-size: 26px;
+}
+
+.main_2{
+  font-size: 20px;
+  margin-left: 17px;
+}
+
+.submit_button{
+  color: white;
+  text-align: center;
+  padding: 10px 24px;
+  font-size: 22px;
+  background: #548CAD;
+  box-shadow: 7px 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  border-color: #548CAD;
+}
+
+input[type=file]::file-selector-button {
+  border-color: #548CAD;
+
+  padding: 10px 15px;
+  border-radius: 7px;
+  background-color: #548CAD;
+  transition: 1s;
+  color: white;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #82147E;
+  border-color: #82147E;
+  color: white;
+}
+
+.accepting{
+  box-shadow: 7px 10px 25px rgba(0, 0, 0, 0.2);
+  margin: 0px;
+  width: 440px;
+  position: center;
+  margin-left: 415px;
+}

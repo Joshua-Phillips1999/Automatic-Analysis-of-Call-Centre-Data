@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Team 44 Capstone</title>
+    <link rel="icon" type="image/x-icon" href="44.png">
+    <!-- Favicon icon 
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"> -->
+    <!-- Pignose Calender 
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet"> -->
+    <!-- Chartist -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/chartist/css/chartist.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="header-logo">Team 44</div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+
+            <div class="header-content clearfix">
+                <div class="header-list">
+                <ul>
+                    <li class="heading"><a href="{{url_for('home')}}">Main</a></li>
+                    <!-- <li class="heading"><a href="{{url_for('dashb')}}"></a>Dashboard</a></li> -->
+                    <li class="heading"><a href="{{url_for('voicelog')}}">Voice Log</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        
+       <!-- <audio controls autoplay>
+            <source src="C:/Users/hp/Desktop/Capstone/Audio%20Files/type2/2female2.wav" type="audio/wav">
+        not working!!!
+        </audio> -->
+
+        <!-- <p>{{metadata['filepath']}}</p>  -->
+        <div class="content-body" style="margin:auto; width:100%;">
+
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <div class="d-inline-block">
+                                    <!--<h2 class="text-white">{{filename}}</h2> -->
+                                    <p class="text-white mb-0">File Name<br></p>
+                                </div>
+                                <h3 class="card-title text-white">{{filename}}</h3>
+                                
+                                
+                                <div class="d-inline-block">
+                                    <!--<h2 class="text-white">{{filename}}</h2> -->
+                                    <p class="text-white mb-0">File Duration</p>
+                                </div>
+                                <h3 class="card-title text-white">{{metadata['streaminfo']['duration']}}</h3>
+                                <!-- <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <div class="d-inline-block">
+                                    <!-- <h2 class="text-white">s[2]}}</h2> -->
+                                    <p class="text-white mb-0">No.of Silence Intervals above threshold</p>
+                                </div>
+                                <h3 class="card-title text-white">{{silences[4]}}</h3>
+
+                                <div class="d-inline-block">
+                                    <!-- <h2 class="text-white">s[2]}}</h2> -->
+                                    <p class="text-white mb-0">Total Silence</p>
+                                </div>
+                                <h3 class="card-title text-white">{{silences[2]}} secs</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                
+                                <div class="d-inline-block">
+                                    <!--<h2 class="text-white">4565</h2>-->
+                                    <p class="text-white mb-0">Sentiment</p>
+                                </div>
+                                <h3 class="card-title text-white">{{sentiment}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                
+                                <div class="d-inline-block">
+                                    <!--<h2 class="text-white">99%</h2> -->
+                                    <p class="text-white mb-0">Emotion</p>
+                                </div>
+                                <h3 class="card-title text-white">{{emoval}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card gradient-7">
+                        <div class="row">
+                            <div class="col-12">
+                                
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                            <!--<h4 class="card-title px-4 mb-3">Transcript</h4>
+                                            <h5 class="text-muted">&emsp;&emsp;{{transcript}}</h5> -->
+                                            <div class="d-inline-block">
+                                                <!-- <h2 class="text-white">s[2]}}</h2> -->
+                                                <p class="text-white mb-0">Transcript</p>
+                                            </div>
+                                            <h3 class="card-title text-white">{{transcript}}</h3>
+                                            <p><br></p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                            <h4 class="mb-1">Audio Waveform</h4>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="chart-wrapper">
+                                        <img id="chart_widget_2" src="{{url_for('static',filename=url)}}" alt="Waveform">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sentiment Pie Chart</h4>
+                                    <div class="chart-wrapper">
+                                        <img src= "{{url_for('static',filename=url_pie)}}" alt="piechart"/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>    
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card gradient-8">
+                                <div class="card-body">
+                                    <p class="text-white mb-0">Greeting Verification</p>
+                                    <h3 class="card-title text-white">{{greeting[0]}} %</h3>
+                                    <p class="text-white mb-0"><br>Words Used</p>
+                                    <div class="mt-4 text-white">
+                                            <ul>
+                                            {% for row in greeting[1] %}
+                                            <h3 class="card-title text-white">
+                                            <li>{{row}}</li>
+                                            </h3>        
+                                            {% endfor %}
+                                        </ul>
+                                        
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card gradient-6">
+                                <div class="card-body">
+                                    <p class="text-white mb-0">Frequent Words</p>
+                                        <div class="mt-4 text-white">
+                                            <!-- {{freqword}} -->
+                                            <ul>
+                                            {% for row in freqword %}
+                                            <h3 class="card-title text-white">
+                                            <li>{{row.lower()}}</li>
+                                            </h3>        
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                            <h4 class="mb-1">Word Cloud</h4>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="chart-wrapper">
+                                        <img id="chart_widget_2" src="{{url_for('static',filename=url_cloud)}}" alt="Wordcloud">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="{{url_for('static', filename='plugins/common/common.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/custom.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/settings.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/gleek.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/styleSwitcher.js')}}"></script>
+
+    <!-- Chartjs -->
+    <script src="{{ url_for('static', filename='plugins/chart.js/Chart.bundle.min.js')}}"></script>
+    <!-- Circle progress -->
+    <script src="{{ url_for('static', filename='plugins/circle-progress/circle-progress.min.js')}}"></script>
+    <!-- Datamap -->
+    <script src="{{ url_for('static', filename='plugins/d3v3/index.js')}}"></script>
+    <script src="{{ url_for('static', filename='plugins/topojson/topojson.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='plugins/datamaps/datamaps.world.min.js')}}"></script>
+    <!-- Morrisjs -->
+    <script src="{{ url_for('static', filename='plugins/raphael/raphael.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='plugins/morris/morris.min.js')}}"></script>
+    <!-- Pignose Calender -->
+    <script src="{{ url_for('static', filename='plugins/moment/moment.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='plugins/pg-calendar/js/pignose.calendar.min.js')}}"></script>
+    <!-- ChartistJS -->
+    <script src="{{ url_for('static', filename='plugins/chartist/js/chartist.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
+
+
+
+    <script src="{{ url_for('static', filename='js/dashboard/dashboard-1.js')}}"></script>
+
+</body>
+
+</html>
